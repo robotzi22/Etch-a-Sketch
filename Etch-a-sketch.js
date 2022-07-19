@@ -1,27 +1,36 @@
-const container= document.getElementById("container");
+const container = document.getElementById("container")
+const userPressButton =document.getElementById("button")
 
-let cells= document.getElementById("TableCells");
-let rows= document.getElementById("TableRows");
 
-function initialGrid(){
-    makeRows(16);
-    makeCollums(16);
-};
 
-function makeRows(rowNum){
+colouringMehods.array.forEach(colouringMehods => colouringMehods.addEventlisener('click',(e) => {
 
-    for(r = 0;r < rowNum; r++){
+    userPressButton = e.target.id
+    makeGrid();
 
-    let row = document.createElement("div");
-    container.appendChild(row).className("TableRows");
-};
-};
 
-function makeCollums(celllNum){
-for(i = 0; i<rows.length;i++){
-    for(c = 0;c < celllNum; c++){
+}));
+
+
+
+function makeGrid(col,row){
+
+    container.style.setProperty("colSyle",col);
+    container.style.setProperty("rowStyle",row)
+
+    for(a = 0; a<(col*row),a++;){
+        
         let cell = document.createElement("div");
-        rows[c].appendChild(cell).className("TableCells");
+        cell.innerText = c +1;
+        container.appendChild(cell).className = "weGrind";
+    }
+makeGrid(16,16);
+}
+
+function checkError(){
+    if( makeGrid()!==error){
+        let message="it works";
+        console.log(message);
     };
 };
-};
+checkError();
