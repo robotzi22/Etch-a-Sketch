@@ -1,6 +1,7 @@
 const container = document.getElementById("container");
-
 const gridBttn = document.getElementById("gridBttn");
+
+
 
 gridBttn.addEventListener('click', ()=> {
     let gridSize = prompt("How large do yo want to make the grid?(please input the number of cells you wish to make)");
@@ -12,13 +13,13 @@ gridBttn.addEventListener('click', ()=> {
             break
         } 
 }
-    makeGrid(rows,cols)
+    makeGrid(gridSize)
 });
 
-function makeGrid(rows, cols) {
-  container.style.setProperty('--grid-rows', rows);
-  container.style.setProperty('--grid-cols', cols);
-  for (c = 0; c < (rows * cols); c++) {
+function makeGrid(gridSize) {
+  container.style.setProperty('--grid-rows', gridSize);
+  container.style.setProperty('--grid-cols', gridSize);
+  for (c = 0; c < (gridSize * gridSize); c++) {
     let cell = document.createElement("div");
     console.log(cell);
     container.appendChild(cell).className = "grid-item";
